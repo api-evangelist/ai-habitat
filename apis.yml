@@ -4,8 +4,7 @@ url: >-
 apis:
   - aid: ai-habitat:ai-habitat
     name: AI Habitat
-    tags:
-      - API
+    tags: []
     humanURL: ' https://aihabitat.org/'
     properties:
       - url: ' https://aihabitat.org/'
@@ -15,8 +14,8 @@ apis:
 name: AI Habitat
 tags:
   - Artificial Intelligence
-  - Simulations
   - Environments
+  - Simulations
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
