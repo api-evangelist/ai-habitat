@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-habitat/refs/heads/main/json-schema/ai-habitat-task-config-schema.json",
+  "title": "TaskConfig",
+  "description": "Habitat-Lab task configuration",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Task type string identifier",
+      "example": "ObjectNav-v1"
+    },
+    "max_episode_steps": {
+      "type": "integer",
+      "description": "Maximum steps per episode",
+      "example": 500
+    },
+    "measurements": {
+      "type": "array",
+      "description": "List of measurement names to compute",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "object",
+      "description": "Available action space configuration"
+    },
+    "goal_sensor_uuid": {
+      "type": "string",
+      "description": "UUID of the goal sensor",
+      "example": "pointgoal"
+    }
+  }
+}

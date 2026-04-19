@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-habitat/refs/heads/main/json-schema/ai-habitat-sensor-spec-schema.json",
+  "title": "SensorSpec",
+  "description": "Specification for a simulated sensor",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string",
+      "description": "Unique sensor identifier",
+      "example": "rgb"
+    },
+    "sensor_type": {
+      "type": "string",
+      "description": "Sensor type: COLOR, DEPTH, SEMANTIC, EQUIRECTANGULAR",
+      "example": "COLOR"
+    },
+    "resolution": {
+      "type": "array",
+      "description": "[height, width] in pixels",
+      "items": {
+        "type": "integer"
+      },
+      "example": [
+        256,
+        256
+      ]
+    },
+    "position": {
+      "type": "array",
+      "description": "Sensor position [x, y, z] relative to agent",
+      "items": {
+        "type": "number"
+      }
+    },
+    "orientation": {
+      "type": "array",
+      "description": "Sensor orientation quaternion",
+      "items": {
+        "type": "number"
+      }
+    },
+    "hfov": {
+      "type": "number",
+      "description": "Horizontal field of view in degrees",
+      "example": 90
+    }
+  }
+}

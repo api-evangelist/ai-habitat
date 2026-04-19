@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-habitat/refs/heads/main/json-structure/ai-habitat-agent-observation-structure.json",
+  "name": "AgentObservation",
+  "description": "Full observation dict returned to an agent after each step",
+  "type": "object",
+  "properties": {
+    "rgb": {
+      "type": "object",
+      "description": "RGB camera observation"
+    },
+    "depth": {
+      "type": "object",
+      "description": "Depth camera observation"
+    },
+    "pointgoal_with_gps_compass": {
+      "type": "object",
+      "description": "Point goal with GPS/compass sensor"
+    },
+    "objectgoal": {
+      "type": "string",
+      "description": "Object category name for ObjectNav tasks",
+      "example": "chair"
+    }
+  }
+}

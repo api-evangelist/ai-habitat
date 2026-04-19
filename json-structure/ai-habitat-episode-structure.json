@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-habitat/refs/heads/main/json-structure/ai-habitat-episode-structure.json",
+  "name": "Episode",
+  "description": "A single training/evaluation episode with start and goal specification",
+  "type": "object",
+  "properties": {
+    "episode_id": {
+      "type": "string",
+      "description": "Unique episode identifier",
+      "example": "ep_001"
+    },
+    "scene_id": {
+      "type": "string",
+      "description": "Scene file path for this episode",
+      "example": "data/scene_datasets/hm3d/train/00001/mesh.basis.glb"
+    },
+    "start_position": {
+      "type": "array",
+      "description": "Agent starting position [x, y, z]",
+      "items": {
+        "type": "double"
+      }
+    },
+    "start_rotation": {
+      "type": "array",
+      "description": "Agent starting rotation quaternion",
+      "items": {
+        "type": "double"
+      }
+    },
+    "goals": {
+      "type": "array",
+      "description": "List of goal specifications",
+      "items": {
+        "type": "object"
+      }
+    },
+    "info": {
+      "type": "object",
+      "description": "Additional episode metadata"
+    }
+  }
+}

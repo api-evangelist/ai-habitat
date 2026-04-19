@@ -1,0 +1,7 @@
+{
+  "type": "ObjectNav-v1",
+  "max_episode_steps": 500,
+  "measurements": [],
+  "actions": {},
+  "goal_sensor_uuid": "pointgoal"
+}

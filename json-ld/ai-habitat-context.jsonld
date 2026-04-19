@@ -1,0 +1,71 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "habitat": "https://aihabitat.org/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "SimulatorConfig": "habitat:SimulatorConfig",
+    "AgentConfig": "habitat:AgentConfig",
+    "SensorSpec": "habitat:SensorSpec",
+    "Observation": "habitat:Observation",
+    "Episode": "habitat:Episode",
+    "NavigationGoal": "habitat:NavigationGoal",
+    "TaskConfig": "habitat:TaskConfig",
+    "sceneId": {
+      "@id": "habitat:scene_id",
+      "@type": "xsd:string"
+    },
+    "agentId": {
+      "@id": "habitat:agent_id",
+      "@type": "xsd:integer"
+    },
+    "sensorType": {
+      "@id": "habitat:sensor_type",
+      "@type": "xsd:string"
+    },
+    "resolution": {
+      "@id": "habitat:resolution",
+      "@container": "@set",
+      "@type": "xsd:integer"
+    },
+    "episodeId": {
+      "@id": "habitat:episode_id",
+      "@type": "xsd:string"
+    },
+    "startPosition": {
+      "@id": "habitat:start_position",
+      "@container": "@set",
+      "@type": "xsd:double"
+    },
+    "goals": {
+      "@id": "habitat:goals",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "maxEpisodeSteps": {
+      "@id": "habitat:max_episode_steps",
+      "@type": "xsd:integer"
+    },
+    "type": {
+      "@id": "habitat:type",
+      "@type": "xsd:string"
+    },
+    "radius": {
+      "@id": "habitat:radius",
+      "@type": "xsd:double"
+    },
+    "position": {
+      "@id": "habitat:position",
+      "@container": "@set",
+      "@type": "xsd:double"
+    },
+    "height": {
+      "@id": "habitat:height",
+      "@type": "xsd:double"
+    },
+    "enablePhysics": {
+      "@id": "habitat:enable_physics",
+      "@type": "xsd:boolean"
+    }
+  }
+}

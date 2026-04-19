@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-habitat/refs/heads/main/json-structure/ai-habitat-navigation-goal-structure.json",
+  "name": "NavigationGoal",
+  "description": "Goal specification for a navigation episode",
+  "type": "object",
+  "properties": {
+    "position": {
+      "type": "array",
+      "description": "Goal position [x, y, z] in scene coordinates",
+      "items": {
+        "type": "double"
+      }
+    },
+    "radius": {
+      "type": "double",
+      "description": "Success radius in meters",
+      "example": 0.2
+    }
+  }
+}

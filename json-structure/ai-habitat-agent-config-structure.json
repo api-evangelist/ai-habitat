@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-habitat/refs/heads/main/json-structure/ai-habitat-agent-config-structure.json",
+  "name": "AgentConfig",
+  "description": "Configuration for an agent in the simulation",
+  "type": "object",
+  "properties": {
+    "height": {
+      "type": "double",
+      "description": "Agent height in meters",
+      "example": 1.5
+    },
+    "radius": {
+      "type": "double",
+      "description": "Agent radius in meters for collision",
+      "example": 0.1
+    },
+    "sensor_specifications": {
+      "type": "array",
+      "description": "List of sensor specs attached to agent",
+      "items": {
+        "type": "object"
+      }
+    },
+    "action_space": {
+      "type": "object",
+      "description": "Discrete action space mapping action names to ActionSpec"
+    },
+    "body_type": {
+      "type": "string",
+      "description": "Agent body type: LocoBot, FetchRobot, Franka, AlienGo",
+      "example": "LocoBot"
+    }
+  }
+}

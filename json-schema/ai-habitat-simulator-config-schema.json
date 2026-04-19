@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-habitat/refs/heads/main/json-schema/ai-habitat-simulator-config-schema.json",
+  "title": "SimulatorConfig",
+  "description": "Configuration for the Habitat-Sim simulator instance",
+  "type": "object",
+  "properties": {
+    "scene_id": {
+      "type": "string",
+      "description": "Path to the 3D scene file (.glb, .ply)",
+      "example": "data/scene_datasets/habitat-test-scenes/apartment_1.glb"
+    },
+    "default_agent_id": {
+      "type": "integer",
+      "description": "Default agent index",
+      "example": 0
+    },
+    "sensor_specifications": {
+      "type": "array",
+      "description": "List of sensor configurations",
+      "items": {
+        "type": "object"
+      }
+    },
+    "physics_simulation_library": {
+      "type": "string",
+      "description": "Physics engine to use",
+      "example": "BulletPhysics"
+    },
+    "gpu_device_id": {
+      "type": "integer",
+      "description": "GPU device ID for rendering",
+      "example": 0
+    },
+    "random_seed": {
+      "type": "integer",
+      "description": "Random seed for reproducibility",
+      "example": 1
+    },
+    "enable_physics": {
+      "type": "boolean",
+      "description": "Enable physics simulation",
+      "example": true
+    }
+  }
+}

@@ -1,0 +1,167 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "AI Habitat"
+  description: "Taxonomy for Meta AI Habitat simulation framework covering simulation configuration, agent specifications, task definitions, and dataset resources for embodied AI research."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: habitat-sim
+      version: "3.0"
+      baseUrl: https://github.com/facebookresearch/habitat-sim
+      status: active
+    - namespace: habitat-lab
+      version: "3.0"
+      baseUrl: https://github.com/facebookresearch/habitat-lab
+      status: active
+
+  resources:
+    - name: SimulatorConfig
+      apis: [habitat-sim]
+      actions: [configure, initialize, reset, step]
+      description: "Simulator configuration and lifecycle"
+    - name: AgentConfig
+      apis: [habitat-sim, habitat-lab]
+      actions: [configure, spawn, observe, act]
+      description: "Agent configuration including sensors and action space"
+    - name: SensorSpec
+      apis: [habitat-sim]
+      actions: [configure, read]
+      description: "Sensor specification for RGB, depth, semantic, and GPS sensors"
+    - name: Episode
+      apis: [habitat-lab]
+      actions: [load, reset, evaluate]
+      description: "Training and evaluation episode with start state and goal"
+    - name: TaskConfig
+      apis: [habitat-lab]
+      actions: [configure, measure, evaluate]
+      description: "Task type configuration and measurement specification"
+    - name: NavigationGoal
+      apis: [habitat-lab]
+      actions: [set, reach]
+      description: "Point-goal or object-goal specification for navigation tasks"
+    - name: Observation
+      apis: [habitat-sim, habitat-lab]
+      actions: [get, process]
+      description: "Multi-modal sensor observations from simulation step"
+
+  actions:
+    - name: step
+      pattern: write
+      description: "Advance simulation by one timestep with an action"
+    - name: reset
+      pattern: write
+      description: "Reset environment to episode start state"
+    - name: observe
+      pattern: read
+      description: "Get current sensor observations from agent"
+    - name: configure
+      pattern: write
+      description: "Set configuration parameters"
+    - name: evaluate
+      pattern: read
+      description: "Compute task metrics and success criteria"
+
+  schemas:
+    simulation:
+      - name: SimulatorConfig
+        description: "Top-level simulator configuration"
+        keyFields: [scene_id, default_agent_id, enable_physics, gpu_device_id]
+      - name: AgentConfig
+        description: "Agent body and sensor configuration"
+        keyFields: [height, radius, sensor_specifications, action_space]
+      - name: SensorSpec
+        description: "Individual sensor specification"
+        keyFields: [uuid, sensor_type, resolution, hfov]
+    tasks:
+      - name: Episode
+        description: "Single training/evaluation episode"
+        keyFields: [episode_id, scene_id, start_position, goals]
+      - name: NavigationGoal
+        description: "Navigation goal with position and radius"
+        keyFields: [position, radius]
+      - name: TaskConfig
+        description: "Task type and measurement configuration"
+        keyFields: [type, max_episode_steps, measurements]
+    observations:
+      - name: Observation
+        description: "Sensor observation dictionary"
+        keyFields: [rgb, depth, semantic, gps, compass]
+      - name: AgentObservation
+        description: "Full agent observation dict with task-specific sensors"
+        keyFields: [rgb, depth, pointgoal_with_gps_compass, objectgoal]
+
+  enums:
+    sensorTypes:
+      - COLOR
+      - DEPTH
+      - SEMANTIC
+      - EQUIRECTANGULAR
+      - PANORAMIC
+    taskTypes:
+      - PointNav-v1
+      - ObjectNav-v1
+      - ImageNav-v1
+      - RearrangePick-v0
+      - RearrangePlacement-v0
+      - HumanoidReach-v0
+    robotTypes:
+      - LocoBot
+      - FetchRobot
+      - FrankaArm
+      - AlienGoQuadruped
+    datasets:
+      - HM3D
+      - HM3D-Semantics
+      - MatterPort3D
+      - Gibson
+      - Replica
+      - ReplicaCAD
+      - HSSD
+
+  authentication:
+    schemes:
+      - type: none
+        description: "Local Python library - no API authentication required"
+
+capability:
+  workflows:
+    - name: "Embodied Navigation Training"
+      description: "Train navigation agents using Habitat-Sim and Habitat-Lab across point-goal, object-goal, and image-goal tasks"
+      apisCombined: [habitat-sim, habitat-lab]
+      personas: [AI Researcher, Robotics Engineer]
+      domains: [Simulation, Reinforcement Learning]
+
+  personas:
+    - id: ai-researcher
+      name: "AI Researcher"
+      description: "Researcher developing embodied AI algorithms using Habitat for training and benchmarking"
+      workflows: ["Embodied Navigation Training"]
+    - id: robotics-engineer
+      name: "Robotics Engineer"
+      description: "Engineer using Habitat for sim-to-real transfer research with physical robot systems"
+      workflows: ["Embodied Navigation Training"]
+
+  domains:
+    - name: "Simulation"
+      description: "High-performance 3D environment simulation and rendering"
+      resources: [SimulatorConfig, AgentConfig, SensorSpec, Observation]
+    - name: "Embodied AI Tasks"
+      description: "Navigation, manipulation, and collaboration task definitions"
+      resources: [Episode, TaskConfig, NavigationGoal]
+
+crossReference:
+  - resource: SimulatorConfig
+    operations: [configure, initialize, reset]
+    workflows: ["Embodied Navigation Training"]
+    personas: [AI Researcher, Robotics Engineer]
+  - resource: Episode
+    operations: [load, reset, evaluate]
+    workflows: ["Embodied Navigation Training"]
+    personas: [AI Researcher]
+  - resource: Observation
+    operations: [get, process]
+    workflows: ["Embodied Navigation Training"]
+    personas: [AI Researcher, Robotics Engineer]

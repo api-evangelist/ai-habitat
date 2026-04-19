@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-habitat/refs/heads/main/json-schema/ai-habitat-observation-schema.json",
+  "title": "Observation",
+  "description": "Sensor observation returned from a simulation step",
+  "type": "object",
+  "properties": {
+    "rgb": {
+      "type": "object",
+      "description": "RGB image array (H x W x 4)"
+    },
+    "depth": {
+      "type": "object",
+      "description": "Depth image array (H x W x 1) in meters"
+    },
+    "semantic": {
+      "type": "object",
+      "description": "Semantic segmentation array (H x W x 1) with object instance IDs"
+    },
+    "gps": {
+      "type": "array",
+      "description": "GPS coordinates [x, z] relative to start",
+      "items": {
+        "type": "number"
+      }
+    },
+    "compass": {
+      "type": "array",
+      "description": "Compass heading in radians",
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}

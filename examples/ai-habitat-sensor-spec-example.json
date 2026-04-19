@@ -1,0 +1,11 @@
+{
+  "uuid": "rgb",
+  "sensor_type": "COLOR",
+  "resolution": [
+    256,
+    256
+  ],
+  "position": [],
+  "orientation": [],
+  "hfov": 90
+}
