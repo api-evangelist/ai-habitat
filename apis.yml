@@ -25,10 +25,10 @@ apis:
     type: GitHubRepository
     title: Habitat-Lab GitHub
   - url: https://pypi.org/project/habitat-sim/
-    type: SDK
+    type: SDKs
     title: Habitat-Sim Python Package
   - url: https://pypi.org/project/habitat-lab/
-    type: SDK
+    type: SDKs
     title: Habitat-Lab Python Package
   description: >-
     AI Habitat simulation framework for embodied AI research, including Habitat-Sim (high-performance 3D simulator) and Habitat-Lab (modular training library). Supports navigation, manipulation, and human-robot
@@ -80,7 +80,7 @@ common:
   description: Annual Habitat Challenge competition on EvalAI for embodied AI navigation.
 - name: Habitat Discussions
   url: https://github.com/facebookresearch/habitat-lab/discussions
-  type: Forum
+  type: Forums
   description: Community forum for Habitat questions and support.
 - name: Habitat HuggingFace
   url: https://huggingface.co/ai-habitat
@@ -88,12 +88,12 @@ common:
   description: AI Habitat datasets and models on HuggingFace.
 - name: Habitat-Sim PyPI
   url: https://pypi.org/project/habitat-sim/
-  type: SDK
+  type: SDKs
   title: Python Package (habitat-sim)
   description: Install Habitat-Sim via pip or conda.
 - name: Habitat-Lab PyPI
   url: https://pypi.org/project/habitat-lab/
-  type: SDK
+  type: SDKs
   title: Python Package (habitat-lab)
   description: Install Habitat-Lab via pip.
 - name: PARTNR Planner
