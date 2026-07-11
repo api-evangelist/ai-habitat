@@ -58,6 +58,8 @@ maintainers:
   email: kin@apievangelist.com
 specificationVersion: '0.19'
 common:
+- type: DomainSecurity
+  url: security/ai-habitat-domain-security.yml
 - name: AI Habitat GitHub Organization
   url: https://github.com/facebookresearch
   type: GitHubOrganization
