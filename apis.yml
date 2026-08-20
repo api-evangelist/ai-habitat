@@ -9,6 +9,13 @@ apis:
   - Simulation
   - Robotics
   - Python
+  - Computer-Vision
+  - Reinforcement Learning
+  tags_raw:
+  - Embodied AI
+  - Simulation
+  - Robotics
+  - Python
   - Computer Vision
   - Reinforcement Learning
   humanURL: 'https://aihabitat.org/'
@@ -35,6 +42,16 @@ apis:
     collaboration tasks across photorealistic 3D indoor environments.
 name: AI Habitat
 tags:
+- Artificial Intelligence
+- Simulation
+- Embodied AI
+- Robotics
+- Computer-Vision
+- Reinforcement Learning
+- Machine-Learning
+- Open-Source
+- Research
+tags_raw:
 - Artificial Intelligence
 - Simulation
 - Embodied AI
