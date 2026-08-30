@@ -1,0 +1,112 @@
+generated: '2026-08-30'
+method: derived
+source: >-
+  json-schema/ai-habitat-simulator-config-schema.json, json-schema/ai-habitat-agent-config-schema.json,
+  json-schema/ai-habitat-sensor-spec-schema.json, json-schema/ai-habitat-observation-schema.json,
+  json-schema/ai-habitat-agent-observation-schema.json, json-schema/ai-habitat-episode-schema.json,
+  json-schema/ai-habitat-navigation-goal-schema.json, json-schema/ai-habitat-task-config-schema.json,
+  vocabulary/ai-habitat-vocabulary.yaml
+provider: AI Habitat
+providerId: ai-habitat
+description: >-
+  Entity-relationship graph for the AI Habitat configuration and observation model, derived from the
+  JSON Schemas already held in this repository. There is no OpenAPI to derive from — AI Habitat is an
+  in-process simulator, so these "entities" are Python/C++ configuration objects and per-step
+  observation payloads, not REST resources. Relationships below are read from the id-reference and
+  embedded-array fields present in those schemas; nothing is inferred beyond what the schemas state.
+caveat: >-
+  The source schemas are API Evangelist-derived artifacts, not provider-published contracts. This data
+  model inherits that provenance: it is a faithful reading of our own schemas, which were in turn
+  written from the Habitat documentation at https://aihabitat.org/docs/.
+entities:
+- name: SimulatorConfig
+  schema: json-schema/ai-habitat-simulator-config-schema.json
+  description: Top-level simulator instantiation config — scene, physics, device and determinism.
+  key_fields: [scene_id, default_agent_id, physics_simulation_library, gpu_device_id, random_seed, enable_physics]
+- name: AgentConfig
+  schema: json-schema/ai-habitat-agent-config-schema.json
+  description: Embodiment of one agent — physical extents, sensor rig and action space.
+  key_fields: [height, radius, body_type, action_space, sensor_specifications]
+- name: SensorSpec
+  schema: json-schema/ai-habitat-sensor-spec-schema.json
+  description: One sensor mounted on an agent, addressed by uuid.
+  identifier: uuid
+  key_fields: [uuid, sensor_type, resolution, position, orientation, hfov]
+- name: Observation
+  schema: json-schema/ai-habitat-observation-schema.json
+  description: Raw per-step sensor readings returned by the simulator.
+  key_fields: [rgb, depth, semantic, gps, compass]
+- name: AgentObservation
+  schema: json-schema/ai-habitat-agent-observation-schema.json
+  description: Task-shaped observation dictionary handed to a policy, keyed by sensor uuid.
+  key_fields: [rgb, depth, pointgoal_with_gps_compass, objectgoal]
+- name: Episode
+  schema: json-schema/ai-habitat-episode-schema.json
+  description: One instantiated task instance — scene, agent start pose and goals.
+  identifier: episode_id
+  key_fields: [episode_id, scene_id, start_position, start_rotation, goals, info]
+- name: NavigationGoal
+  schema: json-schema/ai-habitat-navigation-goal-schema.json
+  description: A goal location with a success radius.
+  key_fields: [position, radius]
+- name: TaskConfig
+  schema: json-schema/ai-habitat-task-config-schema.json
+  description: Task definition — type, episode budget, measurements and action space.
+  key_fields: [type, max_episode_steps, measurements, actions, goal_sensor_uuid]
+relationships:
+- from: SimulatorConfig
+  to: SensorSpec
+  type: has_many
+  via: sensor_specifications
+- from: AgentConfig
+  to: SensorSpec
+  type: has_many
+  via: sensor_specifications
+- from: SensorSpec
+  to: Observation
+  type: has_one
+  via: uuid
+  note: Each sensor's uuid becomes the key its reading appears under in the observation dictionary.
+- from: Episode
+  to: NavigationGoal
+  type: has_many
+  via: goals
+- from: Episode
+  to: SimulatorConfig
+  type: belongs_to
+  via: scene_id
+  note: >-
+    Soft reference — Episode.scene_id and SimulatorConfig.scene_id name the same scene asset path;
+    there is no scene entity with its own identifier in the schema set.
+- from: TaskConfig
+  to: SensorSpec
+  type: belongs_to
+  via: goal_sensor_uuid
+  note: goal_sensor_uuid resolves against SensorSpec.uuid.
+- from: TaskConfig
+  to: AgentObservation
+  type: has_one
+  via: actions
+  note: >-
+    The task's action space and measurement list determine which keys the policy sees in
+    AgentObservation; the schemas record the fields, not the binding logic.
+identifiers:
+- entity: Episode
+  field: episode_id
+  form: opaque string
+  example: ep_001
+- entity: SensorSpec
+  field: uuid
+  form: lowercase sensor name
+  example: rgb
+- entity: TaskConfig
+  field: type
+  form: '<TaskName>-v<N>'
+  example: ObjectNav-v1
+- entity: SimulatorConfig
+  field: scene_id
+  form: filesystem path to a .glb/.ply scene asset
+  example: data/scene_datasets/habitat-test-scenes/apartment_1.glb
+counts:
+  entities: 8
+  relationships: 7

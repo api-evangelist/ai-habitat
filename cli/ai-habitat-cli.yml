@@ -1,0 +1,77 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://raw.githubusercontent.com/facebookresearch/habitat-sim/main/README.md,
+  https://raw.githubusercontent.com/facebookresearch/habitat-lab/main/README.md
+provider: AI Habitat
+providerId: ai-habitat
+description: >-
+  AI Habitat ships no service CLI (there is no hosted API to call), but the platform's documented entry
+  points ARE command-line: a compiled interactive viewer placed on PATH by the install, a Python data
+  download utility invoked as a module, and example/benchmark runners. Every command below is quoted
+  from the provider's own README; nothing here is inferred.
+name: Habitat command-line tools
+distribution: bundled with the habitat-sim / habitat-lab packages (no standalone CLI package)
+install:
+- method: conda
+  command: conda install habitat-sim withbullet -c conda-forge -c aihabitat
+  note: The README's recommended path; build flags `headless` and `withbullet` are chainable.
+- method: pip-from-source
+  command: pip install . --no-build-isolation
+  note: Compiles from source; places the `viewer` binary on PATH.
+- method: pip
+  command: pip install -e habitat-lab
+  note: habitat-lab core; `pip install -e habitat-baselines` adds the RL/IL baselines.
+- method: docker
+  command: see https://github.com/facebookresearch/habitat-lab#docker-setup
+  note: Refreshed roughly once a year for the Habitat Challenge.
+commands:
+- group: data
+  command: python -m habitat_sim.utils.datasets_download
+  description: Download 3D scenes, objects and task datasets by uid into a data path.
+  flags:
+  - name: --uids
+    description: Dataset identifier(s), e.g. habitat_test_scenes, habitat_example_objects,
+      habitat_test_pointnav_dataset, replica_cad_dataset.
+  - name: --data-path
+    description: Destination directory for downloaded assets.
+  examples:
+  - python -m habitat_sim.utils.datasets_download --uids habitat_test_scenes --data-path /path/to/data/
+  - python -m habitat_sim.utils.datasets_download --uids habitat_example_objects --data-path /path/to/data/
+  - python -m habitat_sim.utils.datasets_download --uids replica_cad_dataset
+- group: viewer
+  command: viewer
+  description: >-
+    Compiled C++ interactive scene viewer, placed on PATH by `pip install .`. Editable/development
+    builds create a ./build/viewer symlink.
+  examples:
+  - viewer /path/to/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb
+  - ./build/viewer /path/to/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb
+- group: viewer
+  command: python examples/viewer.py
+  description: Python interactive viewer, equivalent surface to the C++ viewer.
+  flags:
+  - name: --scene
+    description: Path to a scene asset (.glb) or a named scene inside a scene dataset config.
+  - name: --dataset
+    description: Path to a scene_dataset_config.json.
+  examples:
+  - python examples/viewer.py --scene /path/to/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb
+  - python examples/viewer.py --dataset data/replica_cad/replicaCAD.scene_dataset_config.json --scene apt_1
+- group: examples
+  command: python examples/example.py
+  description: Non-interactive example runner used as the smoke test for a habitat-sim install.
+  flags:
+  - name: --scene
+    description: Path to a scene asset.
+  examples:
+  - python /path/to/habitat-sim/examples/example.py --scene /path/to/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb
+- group: training
+  command: habitat-baselines (habitat_baselines run entry points)
+  description: >-
+    Reinforcement-learning (PPO) and imitation-learning training/eval runners shipped in
+    habitat-baselines and configured with Hydra YAML config files.
+  reference: https://github.com/facebookresearch/habitat-lab/blob/main/habitat-baselines/habitat_baselines/README.md
+notes:
+- Configuration for habitat-lab applications moved from command-line arguments to Hydra config YAML
+  files in the v0.3.1 HITL work; see changelog/ai-habitat-changelog.yml.

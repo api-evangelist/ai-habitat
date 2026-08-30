@@ -1,0 +1,97 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://github.com/facebookresearch/habitat-sim/releases.atom,
+  https://github.com/facebookresearch/habitat-lab/releases.atom
+provider: AI Habitat
+providerId: ai-habitat
+description: >-
+  Release history for the AI Habitat platform. AI Habitat publishes no hosted API and no prose changelog
+  page; the dated change record is the GitHub Releases feed on the two primary repositories, which is
+  where release notes are written. habitat-sim and habitat-lab are versioned in lockstep. No CHANGELOG.md
+  exists in either repository root (both probed, 404).
+changelog_urls:
+- https://github.com/facebookresearch/habitat-sim/releases
+- https://github.com/facebookresearch/habitat-lab/releases
+feeds:
+- https://github.com/facebookresearch/habitat-sim/releases.atom
+- https://github.com/facebookresearch/habitat-lab/releases.atom
+scheme: semver-tags
+current_version: v0.3.4
+current_released: '2026-05-07'
+entries:
+- version: v0.3.4
+  date: '2026-05-07'
+  components: [habitat-sim, habitat-lab]
+  breaking: false
+  highlights:
+  - habitat-sim: CUDA 13 build fix — replaced removed cudaDeviceProp computeMode/clockRate accesses with
+      cudaDeviceGetAttribute queries that work on both CUDA 12 and 13.
+  - habitat-sim: added missing type annotations to habitat_sim/utils/datasets_download.py for mypy.
+  - habitat-lab HITL: XR controller support, XR reader application, XR origin get/set APIs, discovery
+      server, sim-based driver, changed default port numbers.
+  - habitat-lab: dataset processing tools for cross-engine support, including Collada transforms into
+      the Habitat coordinate system.
+  - habitat-lab: DebugVisualizer.peek() expanded to accept a bounding box as a target.
+  note: >-
+    Final maintained release. Both READMEs state that beyond v0.3.4 the project no longer receives
+    official active development or maintenance by Meta internal teams.
+- version: v0.3.3
+  date: '2026-02-12'
+  components: [habitat-sim]
+  breaking: true
+  highlights:
+  - drawCoordinateAxes and drawCone added to the debug line renderer.
+  - PARTNR data repositories added to the dataset downloader.
+  - CI migrated from CircleCI to GitHub Actions; nightly conda deployment fixed.
+  - Most Habitat libraries merged into a single library to remove circular dependencies.
+  removals:
+  - Removed the JS build, the WebGL demo build handling and related code.
+  - Removed the C++ Agent and Controls classes.
+  - Dropped the imageio-ffmpeg dependency.
+- version: v0.3.3
+  date: '2025-01-27'
+  components: [habitat-lab]
+  breaking: false
+  highlights:
+  - CI migrated from CircleCI to GitHub Actions; PyPI deployment added to the workflow.
+  - Pure region matching added to the object-to-receptacle mapping utility.
+  - HITL updated off deprecated Magnum mouse APIs.
+- version: v0.3.2
+  date: '2024-10-30'
+  components: [habitat-sim, habitat-lab]
+  breaking: false
+  highlights:
+  - habitat-sim: Simulator.reset() now restores objects to their original state from the scene instance.
+  - habitat-sim: MarkerSets support in Object/Stage/ArticulatedObject configuration JSON plus bindings.
+  - habitat-sim: raycast accuracy improved by buffering within-margin "ghost" hits.
+  - habitat-lab: ArticulatedLink open/close API, default_link API, "next_to" spatial utility.
+  - habitat-lab: ObjectStateSpec / ObjectStateMachine base classes and the Kinematic Relationship
+      Manager, integrated with RearrangeSim.
+- version: v0.3.1
+  date: '2024-03-15'
+  components: [habitat-sim, habitat-lab]
+  breaking: false
+  highlights:
+  - habitat-sim: semantic region support — 2D polyloops with height extrusion to represent and query
+      rooms/regions, with a Python-bound region query API.
+  - habitat-sim: skinned meshes rendered with the PBR shader; panoptic/instance ID support added to the
+      semantic sensor.
+  - habitat-lab: Human-in-the-Loop (HITL) application introduced as the habitat-hitl package —
+      client/server architecture, remote VR evaluation, headless HITL, GUI-controlled Spot.
+  deprecations:
+  - Colab notebooks deprecated in favour of local Jupyter notebooks.
+- version: v0.3.0
+  date: '2023-10-19'
+  components: [habitat-sim, habitat-lab]
+  breaking: true
+  highlights:
+  - 'Habitat 3.0: a co-habitat for humans, avatars and robots — multi-agent training, humanoid agents,
+      the HSSD dataset, and a human-in-the-loop evaluation app for rearrangement tasks.'
+  - habitat-sim rendering: PBR/IBL and an HBAO implementation via Magnum.
+  reference: https://aihabitat.org/habitat3/
+channels:
+- name: stable
+  description: Moving tag/release in both repos tracking the latest supported build.
+- name: aihabitat-nightly
+  description: Nightly conda channel for pre-release habitat-sim builds, consumed by habitat-lab CI.

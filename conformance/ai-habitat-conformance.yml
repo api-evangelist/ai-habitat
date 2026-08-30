@@ -1,0 +1,98 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://raw.githubusercontent.com/facebookresearch/habitat-sim/main/README.md,
+  https://raw.githubusercontent.com/facebookresearch/habitat-lab/main/README.md,
+  https://aihabitat.org/docs/habitat-sim/, https://aihabitat.org/docs/concepts/
+provider: AI Habitat
+providerId: ai-habitat
+description: >-
+  Standards conformance for AI Habitat. Note the shape of this provider before reading the table:
+  Habitat exposes no HTTP API, so the web-API standards family (OAuth 2.0, OIDC, RFC 9457, JSON:API,
+  OData, SCIM, idempotency, pagination) is not applicable rather than failed — there is no protocol
+  surface for them to apply to. The standards that DO govern Habitat are the interchange formats of
+  robotics and 3D simulation, and those are declared in the provider's own README and docs.
+api_standards:
+- id: oauth2
+  conforms: false
+  applicable: false
+  evidence: No hosted API and no authentication surface; the simulator runs in-process.
+- id: oidc
+  conforms: false
+  applicable: false
+  evidence: As above.
+- id: rfc9457
+  conforms: false
+  applicable: false
+  evidence: No HTTP error surface; failures are Python/C++ exceptions.
+- id: pagination
+  conforms: false
+  applicable: false
+  evidence: No collection endpoints.
+- id: idempotency
+  conforms: false
+  applicable: false
+  evidence: >-
+    No network write surface. Determinism is instead provided in-process by SimulatorConfig.random_seed.
+domain_standards:
+- id: urdf
+  name: Unified Robot Description Format
+  conforms: true
+  evidence: >-
+    habitat-sim README, capability list: "Robots described via URDF (mobile manipulators like Fetch,
+    fixed-base arms like Franka, quadrupeds like AlienGo)". URDF import is a first-class simulator
+    capability, which is what lets an off-the-shelf robot model be dropped into a Habitat scene.
+  source: https://github.com/facebookresearch/habitat-sim#readme
+- id: gym-api
+  name: OpenAI Gym / Gymnasium environment interface
+  conforms: true
+  evidence: >-
+    habitat-lab README shows the standard Gym construction path verbatim — `import gym; import
+    habitat.gym; env = gym.make("HabitatRenderPick-v0")` — plus `habitat.gym.make_gym_from_config` for
+    config-driven construction. This is the domain standard that matters most for adoption: any RL
+    codebase that speaks Gym can drive Habitat without a bespoke connector.
+  source: https://github.com/facebookresearch/habitat-lab#readme
+- id: gltf
+  name: glTF / GLB 3D asset format (Khronos)
+  conforms: true
+  evidence: >-
+    Scenes and objects are distributed and loaded as .glb — e.g. the documented test asset
+    data/scene_datasets/habitat-test-scenes/skokloster-castle.glb, and SimulatorConfig.scene_id is
+    documented as a path to a .glb/.ply scene file.
+  source: https://github.com/facebookresearch/habitat-sim#readme
+- id: bullet-physics
+  name: Bullet rigid-body / articulated dynamics
+  conforms: true
+  evidence: >-
+    "Rigid-body mechanics (via Bullet)" in the capability list; the recommended install is the
+    `withbullet` build variant, and SimulatorConfig.physics_simulation_library takes the value
+    "BulletPhysics".
+  source: https://github.com/facebookresearch/habitat-sim#readme
+- id: ros
+  name: Robot Operating System bridge
+  conforms: partial
+  evidence: >-
+    ROS-X-Habitat (https://github.com/ericchen321/ros_x_habitat) bridges Habitat to ROS, and the
+    habitat-lab README links it — but the same section states it "was developed, and is maintained by
+    the Lab for Computational Intelligence at UBC; it has not yet been officially supported by the
+    Habitat Lab team." Recorded as third-party, not a provider conformance claim.
+  source: https://github.com/facebookresearch/habitat-lab#ros-x-habitat
+- id: hydra-config
+  name: Hydra / OmegaConf YAML configuration
+  conforms: true
+  evidence: >-
+    habitat-lab applications are configured with Hydra config YAML files; the v0.3.1 release notes
+    record the migration of HITL apps away from command-line args to Hydra configs.
+  source: https://github.com/facebookresearch/habitat-lab/releases/tag/v0.3.1
+compliance_certifications: []
+compliance_note: >-
+  No SOC 2, ISO 27001, PCI, HIPAA or FedRAMP claim exists and none would apply — AI Habitat is
+  MIT-licensed research software distributed as source and packages, not a processor of customer data.
+  No Compliance pointer is emitted in apis.yml.
+licensing:
+  license: MIT
+  url: https://github.com/facebookresearch/habitat-lab/blob/main/LICENSE
+  applies_to: [habitat-sim, habitat-lab, partnr-planner]
+  note: >-
+    Dataset licences are separate and stricter — HM3D, MatterPort3D, Gibson and Replica each carry
+    their own terms and access agreements, obtained from their publishers, not from Meta.

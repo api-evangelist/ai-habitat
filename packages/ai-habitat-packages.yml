@@ -1,0 +1,88 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://pypi.org/pypi/habitat-lab/json, https://pypi.org/pypi/habitat-sim/json,
+  https://pypi.org/pypi/habitat-baselines/json, https://api.anaconda.org/package/aihabitat/habitat-sim,
+  https://raw.githubusercontent.com/facebookresearch/habitat-sim/main/README.md
+provider: AI Habitat
+providerId: ai-habitat
+description: >-
+  First-party client/runtime distributions for the AI Habitat embodied-AI platform. AI Habitat ships no
+  hosted HTTP API; the product IS the package — a C++/Python simulator (habitat-sim) plus a Python
+  training/benchmark library (habitat-lab, habitat-baselines). The provider's own README names conda
+  (channels conda-forge + aihabitat) as the RECOMMENDED distribution, and the registry metadata below
+  shows why that matters: the PyPI habitat-sim artifact is a 2023 dev build and is not the shipping
+  channel, while habitat-lab/habitat-baselines are current on PyPI.
+packages:
+- name: habitat-lab
+  registry: pypi
+  url: https://pypi.org/project/habitat-lab/
+  language: Python
+  official: true
+  version: 0.3.320260507
+  published: '2026-05-07'
+  license: MIT
+  install: pip install -e habitat-lab
+  repository: https://github.com/facebookresearch/habitat-lab
+  note: >-
+    Modular library for defining embodied-AI tasks, training agents and benchmarking. Version string is
+    the 0.3.3 line stamped with a 2026-05-07 build date; the tagged GitHub release at that date is v0.3.4.
+- name: habitat-baselines
+  registry: pypi
+  url: https://pypi.org/project/habitat-baselines/
+  language: Python
+  official: true
+  version: 0.3.320260507
+  published: '2026-05-07'
+  license: MIT
+  install: pip install -e habitat-baselines
+  repository: https://github.com/facebookresearch/habitat-lab
+  note: Reinforcement-learning (PPO) and imitation-learning baselines that ship alongside habitat-lab.
+- name: habitat-sim
+  registry: pypi
+  url: https://pypi.org/project/habitat-sim/
+  language: Python/C++
+  official: true
+  version: 0.2.4.dev20230403
+  published: '2023-04-03'
+  license: MIT
+  repository: https://github.com/facebookresearch/habitat-sim
+  note: >-
+    DECAY SIGNAL, recorded as found: the newest habitat-sim artifact on PyPI is a 0.2.4 dev build from
+    2023-04-03, three tagged releases behind the v0.3.4 source release of 2026-05-07. This is not
+    abandonment of the simulator — the provider directs installs to conda (see the aihabitat conda entry
+    below) and to a from-source pip build — but a consumer who runs `pip install habitat-sim` gets a
+    three-year-old build with no warning from the registry.
+- name: habitat-sim
+  registry: conda
+  channel: aihabitat
+  url: https://anaconda.org/aihabitat/habitat-sim
+  language: Python/C++
+  official: true
+  version: 0.3.3
+  published: '2025-01-27'
+  license: MIT
+  install: conda install habitat-sim withbullet -c conda-forge -c aihabitat
+  repository: https://github.com/facebookresearch/habitat-sim
+  note: >-
+    The README's RECOMMENDED install path. Channel carries headless and withbullet build variants per
+    platform. Latest published conda version is 0.3.3 (2025-01-27), one tagged release behind v0.3.4.
+- name: habitat-sim (source build)
+  registry: source
+  url: https://github.com/facebookresearch/habitat-sim/blob/main/BUILD_FROM_SOURCE.md
+  language: C++/Python
+  official: true
+  version: v0.3.4
+  published: '2026-05-07'
+  license: MIT
+  install: pip install . --no-build-isolation
+  note: >-
+    The only distribution carrying v0.3.4. Build instructions and common build issues are documented in
+    BUILD_FROM_SOURCE.md in the repository root.
+counts:
+  total: 5
+  official: 5
+  registries:
+    pypi: 3
+    conda: 1
+    source: 1

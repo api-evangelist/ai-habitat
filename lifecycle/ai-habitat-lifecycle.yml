@@ -1,0 +1,84 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://raw.githubusercontent.com/facebookresearch/habitat-sim/main/README.md,
+  https://raw.githubusercontent.com/facebookresearch/habitat-lab/main/README.md,
+  https://github.com/facebookresearch/habitat-sim/releases.atom,
+  https://github.com/facebookresearch/habitat-lab/releases.atom
+provider: AI Habitat
+providerId: ai-habitat
+description: >-
+  Versioning, release and end-of-maintenance posture for the AI Habitat platform. AI Habitat publishes
+  no hosted API, so there is no runtime deprecation-header surface (RFC 8594 Sunset/Deprecation) and no
+  status page. Lifecycle here is package/library lifecycle, read from the provider's own release tags
+  and the maintenance notice at the top of both READMEs.
+versioning:
+  scheme: semver-tags
+  pattern: vMAJOR.MINOR.PATCH
+  current:
+    habitat-sim: v0.3.4
+    habitat-lab: v0.3.4
+  released: '2026-05-07'
+  channels:
+  - name: stable
+    description: A moving `stable` git tag/release that tracks the latest supported build in both repos.
+  - name: aihabitat-nightly
+    description: Nightly conda channel referenced by habitat-lab CI for pre-release habitat-sim builds.
+  note: >-
+    habitat-sim and habitat-lab version in lockstep; the compatible pairing is stated in the
+    habitat-lab installation instructions.
+deprecation:
+  policy_published: true
+  status: end-of-maintenance
+  effective_version: v0.3.4
+  announced_in:
+  - https://github.com/facebookresearch/habitat-sim#readme
+  - https://github.com/facebookresearch/habitat-lab#readme
+  statement: >-
+    "Beyond v0.3.4 this project is no longer receiving official active development or maintenance by
+    Meta internal teams. Please feel free to continue forking and developing the software
+    independently." — verbatim from the warning callout at the top of both the habitat-sim and
+    habitat-lab READMEs.
+  sunset_date: null
+  sunset_header: false
+  migration_path: >-
+    None published. The notice explicitly hands continuation to the community via forking; no successor
+    project, no support window and no end-of-security-fix date are stated.
+  note: >-
+    This is a first-party, unambiguous end-of-maintenance declaration on the primary distribution
+    surface. It is recorded as the deprecation policy for this provider because it is the only lifecycle
+    commitment the provider makes, and it is the single most consequential fact for anyone adopting
+    Habitat today.
+support:
+  sla: none-published
+  status_page: null
+  status_page_note: >-
+    No status page exists and none is expected — the product is a locally installed simulator, not a
+    hosted service.
+  channels:
+  - name: GitHub Discussions
+    url: https://github.com/facebookresearch/habitat-lab/discussions
+  - name: GitHub Issues (habitat-sim)
+    url: https://github.com/facebookresearch/habitat-sim/issues
+  - name: GitHub Issues (habitat-lab)
+    url: https://github.com/facebookresearch/habitat-lab/issues
+releases:
+- version: v0.3.4
+  date: '2026-05-07'
+  repos: [habitat-sim, habitat-lab]
+- version: v0.3.3
+  date: '2026-02-12'
+  repos: [habitat-sim]
+- version: v0.3.3
+  date: '2025-01-27'
+  repos: [habitat-lab]
+- version: v0.3.2
+  date: '2024-10-30'
+  repos: [habitat-sim, habitat-lab]
+- version: v0.3.1
+  date: '2024-03-15'
+  repos: [habitat-sim, habitat-lab]
+- version: v0.3.0
+  date: '2023-10-19'
+  repos: [habitat-sim, habitat-lab]
+deprecated_operations: []

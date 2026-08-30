@@ -1,0 +1,39 @@
+generated: '2026-08-30'
+method: probed
+source: live HTTPS probes of the aihabitat.org host, 2026-08-30
+provider: AI Habitat
+providerId: ai-habitat
+description: >-
+  Well-known document probe for AI Habitat. aihabitat.org is a statically generated research/project
+  site (m.css based) with no application tier, so no /.well-known/ documents are served. Every path
+  below returned a real 404 with the site's HTML 404 page — a recorded absence, not a soft 200. No
+  WellKnown or SecurityTxt pointer is emitted in apis.yml because nothing was served.
+hosts:
+- host: aihabitat.org
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+notes:
+- >-
+  Vulnerability disclosure for this project is NOT published at /.well-known/security.txt; it is
+  published as SECURITY.md on the facebookresearch GitHub organization and routes to the Meta Bug
+  Bounty program. See security/ai-habitat-vulnerability-disclosure.yml.

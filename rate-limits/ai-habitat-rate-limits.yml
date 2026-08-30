@@ -4,93 +4,37 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: AI Habitat
 providerId: ai-habitat
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://aihabitat.org/docs/ and the habitat-sim / habitat-lab READMEs — no network API, therefore no
+  published rate limits. Probed 2026-08-30.
+modified: '2026-08-30'
 tags:
   - Artificial Intelligence
   - Simulation
   - Embodied AI
   - Robotics
-  - Computer Vision
-  - Reinforcement Learning
-  - Machine Learning
   - Open Source
   - Research
-  - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the AI Habitat API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - AI Habitat
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - AI Habitat
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - AI Habitat
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - AI Habitat
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - AI Habitat
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+description: >-
+  AI Habitat exposes no network API, so there are no rate limits to publish and none exist. This file
+  records that measured zero. It REPLACES a 2026-05-04 bulk-sweep scaffold which asserted X-RateLimit-*
+  response headers, a 429 throttle code and a 1,000-request monthly free-tier quota — none of which AI
+  Habitat has ever served, because there is no server.
+limit_count: 0
+limits: []
+headers: {}
+responseCodes: {}
+throughput_note: >-
+  The performance numbers Habitat does publish are the opposite kind of measurement — a ceiling the
+  software achieves rather than one it imposes: 10,000+ FPS multi-process rendering on a single GPU for
+  MatterPort3D scenes, and 8,000+ steps/second simulating a Fetch robot in ReplicaCAD, each step being
+  one 128x128 RGBD render plus 1/30s of rigid-body dynamics. Source:
+  https://github.com/facebookresearch/habitat-sim#readme. These are not rate limits and must not be
+  read as quotas.
+evidence:
+  - url: https://aihabitat.org/
+    status: 200
+  - url: https://aihabitat.org/openapi.json
+    status: 404

@@ -1,0 +1,56 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://aihabitat.org/demo,
+  https://raw.githubusercontent.com/facebookresearch/habitat-sim/main/README.md,
+  https://raw.githubusercontent.com/facebookresearch/habitat-lab/main/README.md
+provider: AI Habitat
+providerId: ai-habitat
+description: >-
+  AI Habitat has no API keys, no test/live mode split and no hosted test environment — there is no
+  hosted API. What it does publish is a try-before-you-install surface (an in-browser WebAssembly build
+  of the simulator) and a set of named, downloadable test fixtures that the README uses as the
+  install smoke test. Both are recorded here verbatim from the provider; no test values are invented.
+test_credentials:
+  applicable: false
+  note: >-
+    No API key, no test-mode prefix, no sandbox tenant. The simulator runs locally; there is nothing
+    to authenticate to.
+hosted_playground:
+- name: Habitat WebGL browser demo
+  url: https://aihabitat.org/demo
+  status: 200
+  probed: '2026-08-30'
+  type: in-browser-wasm
+  description: >-
+    Emscripten/WebAssembly build of habitat-sim rendering a scene into a canvas with RGB, top-down and
+    semantic views, plus a status/log pane. Runs entirely client-side; no account, no key, no install.
+  caveat: >-
+    Serving, but not maintained: the habitat-sim v0.3.3 release notes list "remove JS build, demo, and
+    related handling" under deprecation of stale features. The page is still live and still loads its
+    hsim_bindings.js/bundle.js payload, but it is no longer produced from the current build.
+test_fixtures:
+- uid: habitat_test_scenes
+  kind: 3D scenes
+  command: python -m habitat_sim.utils.datasets_download --uids habitat_test_scenes --data-path /path/to/data/
+  note: The README's canonical install smoke-test asset. Carries no semantic annotations.
+- uid: habitat_example_objects
+  kind: objects
+  command: python -m habitat_sim.utils.datasets_download --uids habitat_example_objects --data-path /path/to/data/
+- uid: habitat_test_pointnav_dataset
+  kind: task dataset
+  command: python -m habitat_sim.utils.datasets_download --uids habitat_test_pointnav_dataset --data-path data/
+  note: Used by the habitat-lab testing section to verify a training-library install.
+- uid: replica_cad_dataset
+  kind: scene dataset
+  command: python -m habitat_sim.utils.datasets_download --uids replica_cad_dataset
+  note: Interactive/rearrangement scenes used by the interactive viewer walkthrough.
+named_test_asset:
+  scene: data/scene_datasets/habitat-test-scenes/skokloster-castle.glb
+  note: The specific asset both viewer examples in the README load.
+time_simulation:
+  available: true
+  note: >-
+    Not a payments-style "test clock" — the simulator itself advances time deterministically per step,
+    and a random_seed is part of SimulatorConfig (see data-model/ai-habitat-data-model.yml), which is
+    what makes a Habitat run reproducible.

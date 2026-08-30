@@ -88,7 +88,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ai-habitat.png
 access: 3rd-Party
 created: '2025-02-17'
-modified: '2026-04-19'
+modified: '2026-08-30'
 position: Consuming
 description: >-
   AI Habitat is an open-source simulation platform from Meta AI Research for embodied AI research. It provides high-performance 3D simulated environments for training and evaluating AI agents on navigation,
@@ -98,6 +98,8 @@ maintainers:
   email: kin@apievangelist.com
 specificationVersion: '0.23'
 common:
+- type: Website
+  url: https://aihabitat.org/
 - type: DomainSecurity
   url: security/ai-habitat-domain-security.yml
 - name: AI Habitat GitHub Organization
@@ -190,3 +192,101 @@ common:
     description: Bullet physics engine for realistic rigid-body simulation and manipulation.
   - name: ROS
     description: Robot Operating System integration for sim-to-real transfer research.
+- name: AI Habitat Packages and SDKs
+  url: packages/ai-habitat-packages.yml
+  type: Packages
+  description: PyPI, conda and source distributions for habitat-sim, habitat-lab and habitat-baselines, with versions and publish dates.
+- name: AI Habitat SDK Inventory
+  url: packages/ai-habitat-packages.yml
+  type: SDKs
+  description: First-party Python/C++ client distributions. The product is the package; there is no hosted API.
+- name: AI Habitat llms.txt
+  url: llms/ai-habitat-llms.txt
+  type: LLMsTxt
+  description: Agent-readable orientation to AI Habitat, generated from this profile and its artifacts.
+- name: AI Habitat Lifecycle
+  url: lifecycle/ai-habitat-lifecycle.yml
+  type: Lifecycle
+  description: Versioning scheme, release cadence, support channels and end-of-maintenance posture.
+- name: AI Habitat End-of-Maintenance Notice
+  url: lifecycle/ai-habitat-lifecycle.yml
+  type: Deprecation
+  description: First-party notice that beyond v0.3.4 the project receives no official active development or maintenance by Meta internal teams.
+- name: AI Habitat Release History
+  url: changelog/ai-habitat-changelog.yml
+  type: ChangeLog
+  description: Structured release notes for habitat-sim and habitat-lab from v0.3.0 to v0.3.4, read from the GitHub release feeds.
+- name: AI Habitat Command Line
+  url: cli/ai-habitat-cli.yml
+  type: CLI
+  description: Documented command-line surface — dataset downloader, C++/Python viewers, example and benchmark runners.
+- name: AI Habitat Sandbox and Test Fixtures
+  url: sandbox/ai-habitat-sandbox.yml
+  type: Sandbox
+  description: In-browser WebAssembly demo plus the named downloadable test scenes and datasets used as the install smoke test.
+- name: Habitat Browser Demo
+  url: https://aihabitat.org/demo
+  type: Playground
+  description: WebAssembly build of the simulator that runs in the browser with no install or account.
+- name: AI Habitat Conformance
+  url: conformance/ai-habitat-conformance.yml
+  type: Conformance
+  description: Domain-standard conformance — Gym/Gymnasium environment interface, URDF, glTF/GLB, Bullet, Hydra config.
+- name: AI Habitat Data Model
+  url: data-model/ai-habitat-data-model.yml
+  type: DataModel
+  description: Entity-relationship graph over the simulator, agent, sensor, observation, episode and task objects.
+- name: AI Habitat Vulnerability Disclosure
+  url: security/ai-habitat-vulnerability-disclosure.yml
+  type: VulnerabilityDisclosure
+  description: facebookresearch organization security policy routing reports to the Meta Bug Bounty program.
+- name: AI Habitat Security Policy
+  url: security/ai-habitat-vulnerability-disclosure.yml
+  type: Security
+  description: How to report a vulnerability in habitat-sim or habitat-lab — never as a public issue or pull request.
+- name: AI Habitat Plans and Pricing
+  url: plans/ai-habitat-plans-pricing.yml
+  type: Plans
+  description: Measured zero — MIT-licensed software with no hosted service, no plans and no pricing page.
+- name: AI Habitat Rate Limits
+  url: rate-limits/ai-habitat-rate-limits.yml
+  type: RateLimits
+  description: Measured zero — no network API, therefore no published or observable rate limits.
+- name: AI Habitat Vocabulary
+  url: vocabulary/ai-habitat-vocabulary.yaml
+  type: Vocabulary
+  description: Taxonomy for simulation configuration, agent specifications, task definitions and dataset resources.
+- name: AI Habitat JSON Schemas
+  url: json-schema/ai-habitat-simulator-config-schema.json
+  type: JSONSchema
+  description: JSON Schema 2020-12 definitions for the Habitat configuration and observation objects.
+- name: AI Habitat Spectral Rules
+  url: rules/ai-habitat-jsonschema-spectral-rules.yml
+  type: Rules
+  description: Spectral ruleset measured from this provider's own JSON Schema conventions.
+- name: Habitat-Sim API Reference
+  url: https://aihabitat.org/docs/habitat-sim/
+  type: APIReference
+  description: Generated simulator reference including Python classes and the C++ API.
+- name: Habitat-Lab API Reference
+  url: https://aihabitat.org/docs/habitat-lab/
+  type: APIReference
+  description: Generated reference for the task, training and benchmarking library.
+- name: Habitat Installation Guide
+  url: https://github.com/facebookresearch/habitat-sim#installation
+  type: GettingStarted
+  description: Four documented install paths — conda (recommended), pip from source, Docker, and source build.
+- name: Habitat Community Support
+  url: https://github.com/facebookresearch/habitat-lab/discussions
+  type: Support
+  description: The project's stated support channel; GitHub issues cover defects in each repository.
+- name: AI Habitat Cookie Policy
+  url: https://aihabitat.org/cookie-policy/
+  type: CookiePolicy
+  description: The site's only published legal/privacy-family document (last updated June 2021); it defers to Meta's Data Policy for data processing.
+
+x-enrichment:
+  date: '2026-08-30'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v1
