@@ -1,0 +1,32 @@
+# Front Door AI Index — ai-habitat — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: ai-habitat
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: aihabitat.org
+  final_host: aihabitat.org
+  ownership: own
+  owner: ai-habitat
+  shares_host_with:
+  - habitat-lab
+  inherited_from: null
+  verdict: scored
+  score: 31
+  host_score: 31
+  density: 22.79
+  words: 1360
+  tiers:
+    agentic: 4
+    core: 26
+    model: 1
+  ambiguous: 13
+  top_terms:
+    AI: 26
+    agent: 11
+    AI agent: 3
+    AI assistant: 1
+    Hugging Face: 1
+    intelligence: 1
+    smart: 1
