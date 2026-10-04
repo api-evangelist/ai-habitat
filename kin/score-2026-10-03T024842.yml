@@ -1,22 +1,20 @@
-# Kin Score artifact — ai-habitat — 2026-08-25T154045
+# Kin Score artifact — ai-habitat — 2026-10-03T024842
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: ai-habitat
-  schema_version: 0.14.0
-  scored_at: '2026-08-25'
-  run_ts: 2026-08-25T154045
-  composite: 21.9
-  band: emerging
+  schema_version: 0.23.0
+  scored_at: '2026-10-03'
+  run_ts: 2026-10-03T024842
+  composite: 34.4
+  band: thin
   facets:
-    discoverability: 59.3
+    discoverability: 64.3
     contract_quality: 14.7
-    governance: 9.8
-    operational_transparency: 13.2
-    developer_ergonomics: 31.0
-    commercial_clarity: 15.8
-    contract_governance: 9.8
-    access_clarity: 15.8
+    contract_governance: 23.5
+    operational_transparency: 39.5
+    developer_ergonomics: 73.8
+    access_clarity: 7.9
   agent_readiness:
     score: 2.5
     band: human-only
@@ -40,11 +38,11 @@ kin_score:
       protected_resource_metadata: false
       dynamic_client_registration: false
       agentic_commerce: false
-  needs_work:
-    owner: catalog
-    reasons:
-    - owner: catalog
-      reason: no_resolvable_host
-    detected: '2026-08-18'
-    note: Recorded so this provider's gaps can be attributed. Does not affect the
-      composite.
+  regulatory:
+    applies: true
+    regime: Horizontal (data, software, accessibility, platform)
+    regime_id: horizontal
+    score: 15.5
+    matched_via: fallback
+  provenance:
+    conformance: first-party
