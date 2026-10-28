@@ -1,4 +1,4 @@
-# AI Habitat (ai-habitat)
+# AI Habitat
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,135 +66,162 @@
 
 AI Habitat is an open-source simulation platform from Meta AI Research for embodied AI research. It provides high-performance 3D simulated environments for training and evaluating AI agents on navigation, manipulation, and human-robot collaboration tasks. Habitat-Sim delivers 10,000+ FPS simulation and Habitat-Lab provides a modular library for defining tasks, training agents, and running benchmarks.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/ai-habitat/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · Simulation · Embodied AI · Robotics · Computer Vision · Reinforcement Learning · Machine Learning · Open Source · Research
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## AI Habitat on APIs.io
 
-## Tags:
+Everything profiled for AI Habitat is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ai-habitat/](https://apis.io/providers/ai-habitat/)** — or go straight to one of the APIs or properties below.
 
- - Artificial Intelligence, Simulation, Embodied AI, Robotics, Computer Vision, Reinforcement Learning, Machine Learning, Open Source, Research
+### APIs (1)
 
-## Timestamps
+- [AI Habitat](https://apis.io/apis/ai-habitat/ai-habitat/) — AI Habitat simulation framework for embodied AI research, including Habitat-Sim (high-performance 3D simulator) and Habitat-Lab (modular training library).…
 
-- **Created:** 2025-02-17
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### AI Habitat
-AI Habitat simulation framework for embodied AI research, including Habitat-Sim (high-performance 3D simulator) and Habitat-Lab (modular training library). Supports navigation, manipulation, and human-robot collaboration tasks across photorealistic 3D indoor environments.
+#### JSON Schema (8)
 
-**Human URL:** [https://aihabitat.org/](https://aihabitat.org/)
+The data models the API reads and writes.
 
-#### Tags:
+- [AgentConfig](https://apis.io/schemas/ai-habitat/ai-habitat-agent-config/)
+- [AgentObservation](https://apis.io/schemas/ai-habitat/ai-habitat-agent-observation/)
+- [Episode](https://apis.io/schemas/ai-habitat/ai-habitat-episode/)
+- [NavigationGoal](https://apis.io/schemas/ai-habitat/ai-habitat-navigation-goal/)
+- [Observation](https://apis.io/schemas/ai-habitat/ai-habitat-observation/)
+- [SensorSpec](https://apis.io/schemas/ai-habitat/ai-habitat-sensor-spec/)
+- [SimulatorConfig](https://apis.io/schemas/ai-habitat/ai-habitat-simulator-config/)
+- [TaskConfig](https://apis.io/schemas/ai-habitat/ai-habitat-task-config/)
 
- - Embodied AI, Simulation, Robotics, Python, Computer Vision, Reinforcement Learning
+#### JSON Structure (8)
 
-#### Properties
+Data models expressed in JSON Structure.
 
-- [Documentation](https://aihabitat.org/)
-- [API Documentation](https://aihabitat.org/docs/)
-- [Habitat-Sim GitHub](https://github.com/facebookresearch/habitat-sim)
-- [Habitat-Lab GitHub](https://github.com/facebookresearch/habitat-lab)
-- [Habitat-Sim Python Package](https://pypi.org/project/habitat-sim/)
-- [Habitat-Lab Python Package](https://pypi.org/project/habitat-lab/)
+- [Ai Habitat Agent Config Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-agent-config-structure/)
+- [Ai Habitat Agent Observation Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-agent-observation-structure/)
+- [Ai Habitat Episode Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-episode-structure/)
+- [Ai Habitat Navigation Goal Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-navigation-goal-structure/)
+- [Ai Habitat Observation Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-observation-structure/)
+- [Ai Habitat Sensor Spec Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-sensor-spec-structure/)
+- [Ai Habitat Simulator Config Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-simulator-config-structure/)
+- [Ai Habitat Task Config Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-task-config-structure/)
 
-## Common Properties
+#### JSON-LD (1)
 
-- [AI Habitat GitHub Organization](https://github.com/facebookresearch)
-- [Habitat-Sim Repository](https://github.com/facebookresearch/habitat-sim)
-- [Habitat-Lab Repository](https://github.com/facebookresearch/habitat-lab)
-- [Habitat Documentation](https://aihabitat.org/docs/)
-- [Habitat Challenge](https://aihabitat.org/challenge/)
-- [Habitat Discussions](https://github.com/facebookresearch/habitat-lab/discussions)
-- [Habitat HuggingFace](https://huggingface.co/ai-habitat)
-- [Python Package (habitat-sim)](https://pypi.org/project/habitat-sim/)
-- [Python Package (habitat-lab)](https://pypi.org/project/habitat-lab/)
-- [PARTNR Planner](https://github.com/facebookresearch/partnr-planner)
+Linked-data contexts for the provider's vocabulary.
 
-## Features
+- [Ai Habitat Context](https://apis.io/jsonld/ai-habitat/ai-habitat-context/)
 
-| Name | Description |
-|------|-------------|
-| High-Performance Simulation | Habitat-Sim achieves 10,000+ FPS on a single GPU and 8,000+ steps/second for robot simulation, enabling fast RL training. |
-| Photorealistic 3D Environments | Supports HM3D, MatterPort3D, Gibson, Replica, and HSSD datasets with high visual fidelity. |
-| Physics-Enabled Simulation | Bullet physics engine integration for realistic object interactions and manipulation tasks. |
-| Robot Support via URDF | Configurable robot models including Fetch mobile manipulator, Franka arm, and AlienGo quadruped. |
-| Configurable Sensors | RGB, depth, semantic, and egomotion sensors for varied agent perception configurations. |
-| Modular Task Framework | Habitat-Lab provides modular task definition, agent configuration, and benchmarking tools. |
-| Imitation and Reinforcement Learning | Built-in support for IL and RL training pipelines for embodied AI agents. |
-| Human-Robot Collaboration | Habitat 3.0 co-habitat supports humans, avatars, and robots sharing simulated environments. |
-| Parallelizable Across Clusters | Designed for large-scale distributed training across GPU clusters. |
-| Annual Benchmark Challenge | Habitat Challenge on EvalAI provides standardized evaluation of navigation and manipulation agents. |
+#### Vocabulary (1)
 
-## Use Cases
+The provider's domain terms, defined.
 
-| Name | Description |
-|------|-------------|
-| Embodied Navigation Research | Train and evaluate AI agents on point-goal, object-goal, and image-goal navigation tasks in 3D environments. |
-| Robot Manipulation Research | Develop manipulation skills for pick-and-place, rearrangement, and tool use with simulated robot arms. |
-| Human-Robot Collaboration | Research human-robot teaming for household tasks using the PARTNR benchmark and Habitat 3.0. |
-| Reinforcement Learning Training | Fast simulation enables RL agents to explore millions of environment steps for policy learning. |
-| Dataset Creation and Annotation | Generate synthetic data, annotations, and demonstrations for embodied AI training datasets. |
+- [Ai Habitat Vocabulary](https://apis.io/vocabularies/ai-habitat/ai-habitat-vocabulary/)
 
-## Integrations
+#### Examples (8)
 
-| Name | Description |
-|------|-------------|
-| PyTorch | Deep learning framework integration for neural network training and inference. |
-| HuggingFace | Datasets and models available on HuggingFace Hub at ai-habitat organization. |
-| EvalAI | Habitat Challenge evaluation hosted on EvalAI platform for standardized benchmarking. |
-| Conda / conda-forge | Conda package distribution via conda-forge and aihabitat channels. |
-| Bullet Physics | Bullet physics engine for realistic rigid-body simulation and manipulation. |
-| ROS | Robot Operating System integration for sim-to-real transfer research. |
+Example requests and responses.
 
-## Artifacts
+- [Ai Habitat Agent Config Example](https://apis.io/examples/ai-habitat/ai-habitat-agent-config-example/)
+- [Ai Habitat Agent Observation Example](https://apis.io/examples/ai-habitat/ai-habitat-agent-observation-example/)
+- [Ai Habitat Episode Example](https://apis.io/examples/ai-habitat/ai-habitat-episode-example/)
+- [Ai Habitat Navigation Goal Example](https://apis.io/examples/ai-habitat/ai-habitat-navigation-goal-example/)
+- [Ai Habitat Observation Example](https://apis.io/examples/ai-habitat/ai-habitat-observation-example/)
+- [Ai Habitat Sensor Spec Example](https://apis.io/examples/ai-habitat/ai-habitat-sensor-spec-example/)
+- [Ai Habitat Simulator Config Example](https://apis.io/examples/ai-habitat/ai-habitat-simulator-config-example/)
+- [Ai Habitat Task Config Example](https://apis.io/examples/ai-habitat/ai-habitat-task-config-example/)
 
-Machine-readable schema specifications organized by format.
+#### Governance rules (1)
 
-### JSON Schema
+Spectral rulesets for the provider's contracts.
 
-- [ai-habitat-agent-config-schema.json](json-schema/ai-habitat-agent-config-schema.json)
-- [ai-habitat-agent-observation-schema.json](json-schema/ai-habitat-agent-observation-schema.json)
-- [ai-habitat-episode-schema.json](json-schema/ai-habitat-episode-schema.json)
-- [ai-habitat-navigation-goal-schema.json](json-schema/ai-habitat-navigation-goal-schema.json)
-- [ai-habitat-observation-schema.json](json-schema/ai-habitat-observation-schema.json)
-- [ai-habitat-sensor-spec-schema.json](json-schema/ai-habitat-sensor-spec-schema.json)
-- [ai-habitat-simulator-config-schema.json](json-schema/ai-habitat-simulator-config-schema.json)
-- [ai-habitat-task-config-schema.json](json-schema/ai-habitat-task-config-schema.json)
+- [AI Habitat — jsonschema rules](https://apis.io/rules/ai-habitat/ai-habitat-jsonschema-spectral-rules/)
 
-### JSON Structure
+#### Security (2)
 
-- [ai-habitat-agent-config-structure.json](json-structure/ai-habitat-agent-config-structure.json)
-- [ai-habitat-agent-observation-structure.json](json-structure/ai-habitat-agent-observation-structure.json)
-- [ai-habitat-episode-structure.json](json-structure/ai-habitat-episode-structure.json)
-- [ai-habitat-navigation-goal-structure.json](json-structure/ai-habitat-navigation-goal-structure.json)
-- [ai-habitat-observation-structure.json](json-structure/ai-habitat-observation-structure.json)
-- [ai-habitat-sensor-spec-structure.json](json-structure/ai-habitat-sensor-spec-structure.json)
-- [ai-habitat-simulator-config-structure.json](json-structure/ai-habitat-simulator-config-structure.json)
-- [ai-habitat-task-config-structure.json](json-structure/ai-habitat-task-config-structure.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### JSON-LD
+- [Ai Habitat Domain Security](https://apis.io/security/ai-habitat/ai-habitat-domain-security/)
+- [Ai Habitat Vulnerability Disclosure](https://apis.io/security/ai-habitat/ai-habitat-vulnerability-disclosure/)
 
-- [ai-habitat-context.jsonld](json-ld/ai-habitat-context.jsonld)
+#### Plans and pricing (1)
 
-### Examples
+Published plans, tiers and prices.
 
-- [ai-habitat-agent-config-example.json](examples/ai-habitat-agent-config-example.json)
-- [ai-habitat-agent-observation-example.json](examples/ai-habitat-agent-observation-example.json)
-- [ai-habitat-episode-example.json](examples/ai-habitat-episode-example.json)
-- [ai-habitat-navigation-goal-example.json](examples/ai-habitat-navigation-goal-example.json)
-- [ai-habitat-observation-example.json](examples/ai-habitat-observation-example.json)
-- [ai-habitat-sensor-spec-example.json](examples/ai-habitat-sensor-spec-example.json)
-- [ai-habitat-simulator-config-example.json](examples/ai-habitat-simulator-config-example.json)
-- [ai-habitat-task-config-example.json](examples/ai-habitat-task-config-example.json)
+- [Ai Habitat Plans Pricing](https://apis.io/plans/ai-habitat/ai-habitat-plans-pricing/)
 
-## Vocabulary
+#### Rate limits (1)
 
-- [AI Habitat Vocabulary](vocabulary/ai-habitat-vocabulary.yaml) — Unified taxonomy mapping 7 resources, 5 actions, 1 workflow, and 2 personas across simulation and embodied AI task dimensions
+Published request limits.
 
-## Maintainers
+- [Ai Habitat Rate Limits](https://apis.io/rate-limits/ai-habitat/ai-habitat-rate-limits/)
 
-**FN:** Kin Lane
+#### FinOps (1)
 
-**Email:** kin@apievangelist.com
+What the API costs to run, by operation.
+
+- [Ai Habitat Finops](https://apis.io/finops/ai-habitat/ai-habitat-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aihabitat.org/)
+- [Documentation](https://aihabitat.org/docs/)
+- [Getting started](https://github.com/facebookresearch/habitat-sim#installation)
+- [API reference](https://aihabitat.org/docs/habitat-sim/)
+- [Support](https://github.com/facebookresearch/habitat-lab/discussions)
+- [GitHub](https://github.com/facebookresearch)
+
+## API Evangelist rating
+
+**Kin Score 32.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 14.7 |
+| Contract governance | 23.5 |
+| Operational transparency | 39.5 |
+| Developer ergonomics | 73.8 |
+| Access clarity | 0.0 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ai-habitat/](https://apis.io/providers/ai-habitat/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for AI Habitat: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ai-habitat/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
