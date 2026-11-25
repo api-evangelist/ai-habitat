@@ -97,14 +97,14 @@ The data models the API reads and writes.
 
 Data models expressed in JSON Structure.
 
-- [Ai Habitat Agent Config Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-agent-config-structure/)
-- [Ai Habitat Agent Observation Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-agent-observation-structure/)
-- [Ai Habitat Episode Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-episode-structure/)
-- [Ai Habitat Navigation Goal Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-navigation-goal-structure/)
-- [Ai Habitat Observation Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-observation-structure/)
-- [Ai Habitat Sensor Spec Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-sensor-spec-structure/)
-- [Ai Habitat Simulator Config Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-simulator-config-structure/)
-- [Ai Habitat Task Config Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-task-config-structure/)
+- [AI Habitat Agent Config Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-agent-config-structure/)
+- [AI Habitat Agent Observation Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-agent-observation-structure/)
+- [AI Habitat Episode Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-episode-structure/)
+- [AI Habitat Navigation Goal Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-navigation-goal-structure/)
+- [AI Habitat Observation Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-observation-structure/)
+- [AI Habitat Sensor Spec Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-sensor-spec-structure/)
+- [AI Habitat Simulator Config Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-simulator-config-structure/)
+- [AI Habitat Task Config Structure](https://apis.io/json-structure/ai-habitat/ai-habitat-task-config-structure/)
 
 #### JSON-LD (1)
 
@@ -122,14 +122,14 @@ The provider's domain terms, defined.
 
 Example requests and responses.
 
-- [Ai Habitat Agent Config Example](https://apis.io/examples/ai-habitat/ai-habitat-agent-config-example/)
-- [Ai Habitat Agent Observation Example](https://apis.io/examples/ai-habitat/ai-habitat-agent-observation-example/)
-- [Ai Habitat Episode Example](https://apis.io/examples/ai-habitat/ai-habitat-episode-example/)
-- [Ai Habitat Navigation Goal Example](https://apis.io/examples/ai-habitat/ai-habitat-navigation-goal-example/)
-- [Ai Habitat Observation Example](https://apis.io/examples/ai-habitat/ai-habitat-observation-example/)
-- [Ai Habitat Sensor Spec Example](https://apis.io/examples/ai-habitat/ai-habitat-sensor-spec-example/)
-- [Ai Habitat Simulator Config Example](https://apis.io/examples/ai-habitat/ai-habitat-simulator-config-example/)
-- [Ai Habitat Task Config Example](https://apis.io/examples/ai-habitat/ai-habitat-task-config-example/)
+- [AI Habitat Agent Config Example](https://apis.io/examples/ai-habitat/ai-habitat-agent-config-example/)
+- [AI Habitat Agent Observation Example](https://apis.io/examples/ai-habitat/ai-habitat-agent-observation-example/)
+- [AI Habitat Episode Example](https://apis.io/examples/ai-habitat/ai-habitat-episode-example/)
+- [AI Habitat Navigation Goal Example](https://apis.io/examples/ai-habitat/ai-habitat-navigation-goal-example/)
+- [AI Habitat Observation Example](https://apis.io/examples/ai-habitat/ai-habitat-observation-example/)
+- [AI Habitat Sensor Spec Example](https://apis.io/examples/ai-habitat/ai-habitat-sensor-spec-example/)
+- [AI Habitat Simulator Config Example](https://apis.io/examples/ai-habitat/ai-habitat-simulator-config-example/)
+- [AI Habitat Task Config Example](https://apis.io/examples/ai-habitat/ai-habitat-task-config-example/)
 
 #### Governance rules (1)
 
@@ -141,26 +141,26 @@ Spectral rulesets for the provider's contracts.
 
 Authentication, trust centre, and vulnerability disclosure.
 
-- [Ai Habitat Domain Security](https://apis.io/security/ai-habitat/ai-habitat-domain-security/)
-- [Ai Habitat Vulnerability Disclosure](https://apis.io/security/ai-habitat/ai-habitat-vulnerability-disclosure/)
+- [AI Habitat Domain Security](https://apis.io/security/ai-habitat/ai-habitat-domain-security/)
+- [AI Habitat Vulnerability Disclosure](https://apis.io/security/ai-habitat/ai-habitat-vulnerability-disclosure/)
 
 #### Plans and pricing (1)
 
 Published plans, tiers and prices.
 
-- [Ai Habitat Plans Pricing](https://apis.io/plans/ai-habitat/ai-habitat-plans-pricing/)
+- [AI Habitat Plans Pricing](https://apis.io/plans/ai-habitat/ai-habitat-plans-pricing/)
 
 #### Rate limits (1)
 
 Published request limits.
 
-- [Ai Habitat Rate Limits](https://apis.io/rate-limits/ai-habitat/ai-habitat-rate-limits/)
+- [AI Habitat Rate Limits](https://apis.io/rate-limits/ai-habitat/ai-habitat-rate-limits/)
 
 #### FinOps (1)
 
 What the API costs to run, by operation.
 
-- [Ai Habitat Finops](https://apis.io/finops/ai-habitat/ai-habitat-finops/)
+- [AI Habitat Finops](https://apis.io/finops/ai-habitat/ai-habitat-finops/)
 
 ## Where to find this API
 
@@ -175,14 +175,14 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 32.9** — thin · rubric 0.24.0 · scored 2026-10-17
+**Kin Score 32.4** — thin · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
 | Discoverability | 64.3 |
 | Contract quality | 14.7 |
 | Contract governance | 23.5 |
-| Operational transparency | 39.5 |
+| Operational transparency | 35.7 |
 | Developer ergonomics | 73.8 |
 | Access clarity | 0.0 |
 
@@ -209,6 +209,12 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Protected Resource Metadata | — |
 | Dynamic Client Registration | — |
 | Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
 **Regulatory alignment 15.5** — Horizontal (data, software, accessibility, platform)
 
